@@ -28,7 +28,6 @@ class DatabaseFactory {
         val config = HikariConfig()
         config.apply {
             driverClassName = System.getenv("JDBC_DRIVER")
-            //jdbcUrl = System.getenv("DATABASE_URL")
             maximumPoolSize = 6
             isAutoCommit = false
             transactionIsolation = "TRANSACTION_REPEATABLE_READ"
@@ -38,6 +37,8 @@ class DatabaseFactory {
             val password = uri.userInfo.split(":").toTypedArray()[1]
             jdbcUrl =
                 "jdbc:postgresql://" + uri.host + ":" + uri.port + uri.path + "?sslmode=require" + "&user=$username&password=$password"
+
+            config.validate()
         }
         return HikariDataSource(config)
     }
