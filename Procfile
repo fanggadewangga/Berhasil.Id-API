@@ -1,1 +1,1 @@
-web: build/install/berhasilid-backend/bin/berhasilid-backend
+web: build/install/example/bin/example
