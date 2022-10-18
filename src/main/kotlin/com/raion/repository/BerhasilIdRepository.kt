@@ -1,3 +1,5 @@
+@file:Suppress("IMPLICIT_NOTHING_TYPE_ARGUMENT_IN_RETURN_POSITION")
+
 package com.raion.repository
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
@@ -83,7 +85,7 @@ class BerhasilIdRepository {
         }
     }
 
-    suspend fun getAllPosts() = dbFactory.dbQuery {
+    private suspend fun getAllPosts() = dbFactory.dbQuery {
         PostTable
             .selectAll()
             .groupBy(PostTable.postId)

@@ -14,5 +14,5 @@ object UMKMTable : Table() {
     val image = varchar("image", 512)
     val itemSold = integer("item_sold")
 
-    override val primaryKey: PrimaryKey? = PrimaryKey(umkmId)
+    override val primaryKey: PrimaryKey = PrimaryKey(umkmId)
 }

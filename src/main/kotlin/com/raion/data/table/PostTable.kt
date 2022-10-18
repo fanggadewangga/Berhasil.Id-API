@@ -11,5 +11,5 @@ object PostTable : Table() {
     val title = varchar("title", 128)
     val caption = varchar("caption",512)
 
-    override val primaryKey: PrimaryKey? = PrimaryKey(postId)
+    override val primaryKey: PrimaryKey = PrimaryKey(postId)
 }

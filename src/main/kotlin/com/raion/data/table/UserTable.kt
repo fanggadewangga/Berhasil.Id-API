@@ -9,5 +9,5 @@ object UserTable : Table() {
     val username = varchar("username", 64)
     val avatar = varchar("avatar",128)
 
-    override val primaryKey: PrimaryKey? = PrimaryKey(uid)
+    override val primaryKey: PrimaryKey = PrimaryKey(uid)
 }
